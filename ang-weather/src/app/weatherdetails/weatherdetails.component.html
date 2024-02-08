@@ -1,0 +1,13 @@
+<div class="weather-details">
+    <div class="details-card">
+        <!-- <p>City : {{WeatherData.}}</p> -->
+        <!-- <p>Time : </p> -->
+        <img src="../../assets/weather" alt="weather">
+        <p>Weather : {{WeatherData.weather[0].main}}</p>
+        <p>Current Temperature : {{WeatherData.main.temp - 273.15 | number: '1.0-0'}}°</p>
+        <p>Feels like : {{WeatherData.main.feels_like - 273.15 | number: '1.0-0'}}°</p>
+        <p>Highest temperature : {{WeatherData.main.temp_min - 273.15 | number: '1.0-0'}}°</p>
+        <p>Lowest Temperature : {{WeatherData.main.temp_max - 273.15 | number: '1.0-0'}}°</p>
+        <p>Humidity : {{WeatherData.main.humidity}}%</p>
+    </div>
+</div>
