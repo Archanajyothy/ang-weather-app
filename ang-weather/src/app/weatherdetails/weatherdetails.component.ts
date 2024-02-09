@@ -7,6 +7,9 @@ import { ApiServiceService } from '../service/api-service.service';
   styleUrl: './weatherdetails.component.css'
 })
 export class WeatherdetailsComponent implements OnInit{
+
+  city: string = '';
+
   constructor(private apiService : ApiServiceService){}
   WeatherData: any = {
     main: {},
@@ -16,9 +19,18 @@ export class WeatherdetailsComponent implements OnInit{
     }
   }
   ngOnInit(): void {
-    this.apiService.getWeatherData().subscribe((res) => {
+    this.apiService.getWeatherData(this.city).subscribe((res) => {
       this.WeatherData = res
+      
       //console.log('from details page'+ this.WeatherData);
+    })
+  }
+
+  onSubmit(event: Event){
+    this.apiService.getWeatherData(this.city).subscribe((res) => {
+      this.WeatherData = res
+      console.log("from function");
+      console.log(this.WeatherData);
     })
   }
 

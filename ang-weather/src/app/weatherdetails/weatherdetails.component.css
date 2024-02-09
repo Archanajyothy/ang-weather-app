@@ -1,18 +1,63 @@
+.container{
+    width: 100%;
+    margin-bottom: 0px;
+    position: relative;
+    margin-left: 365px;
+}
 .weather-details{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 550px;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%);
     color: white;
     border-radius: 20px;
     margin: 100px auto;
+    margin-top: 20px;
 }
 .details-card{
+    margin-top: 100px;
     margin-left: 50px;
+}
+.cloud{
+    margin-left: 0px;
+    width: 550px;
+    height: 200px;
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
 }
 img{
     display: flex;
     width: 100%;
     height: auto;
     margin-left: -25px;
+}
+/* .search{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%);
+    color: white;
+    border-radius: 20px;
+    width: 550px;
+    height: 70px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-right: 100px;
+} */
+.search{
+    margin-top: 50px;
+    z-index: 9999;
+    opacity: 0.45;
+}
+.search > input{
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+    margin-left: 120px;
+    margin-top: 30px;
+    border: 2px;
+}
+.container > .search > i {
+    margin-left: 15px;
+    font-size: 50px;
+    margin-top: 5px;
 }

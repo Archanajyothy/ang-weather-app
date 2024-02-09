@@ -1,8 +1,22 @@
 <div class="weather-details">
+    <div class="search">
+        <input type="text" [(ngModel)]= "city" (keyup.enter)="onSubmit($event)">
+        <!-- <i class="fa-solid fa-magnifying-glass" ></i> -->
+    </div>
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Clouds'" src="../../assets/clouds" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Clear'" src="../../assets/clear" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Rain'" src="../../assets/rain" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Thunderstorm'" src="../../assets/thunderstorm" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Snow'" src="../../assets/snow" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Haze'" src="../../assets/haze" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Wind'" src="../../assets/wind" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Mist'" src="../../assets/mist" alt="">
+    <img class="cloud" *ngIf="WeatherData.weather[0].main === 'Smoke'" src="../../assets/smoke" alt="">
+
     <div class="details-card">
-        <!-- <p>City : {{WeatherData.}}</p> -->
+        <p>City : {{WeatherData.name}}</p>
         <!-- <p>Time : </p> -->
-        <img src="../../assets/weather" alt="weather">
+        <!-- <img src="../../assets/weather" alt="weather"> -->
         <p>Weather : {{WeatherData.weather[0].main}}</p>
         <p>Current Temperature : {{WeatherData.main.temp - 273.15 | number: '1.0-0'}}°</p>
         <p>Feels like : {{WeatherData.main.feels_like - 273.15 | number: '1.0-0'}}°</p>
