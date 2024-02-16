@@ -1,18 +1,29 @@
-<a routerLink="view">
-    <div id="divWeatherMain"> 
-        <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+<div class="container">
+    <div class="cards" *ngFor="let city of cities">
+      <a [routerLink]="['/weather-details', city]" >
+        <!-- <a routerLink="view" ></a> -->
+        
+        <div id="divWeatherMain"> 
+          <div *ngIf="isDay" class="weatherWidgetRow">
             <i class="fas fa-3x fa-sun sun"></i>  
-        </div>   
-        <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+          </div>   
+          <div *ngIf="!isDay" class="weatherWidgetRow">
             <i class="fas fa-3x fa-moon moon"></i>  
-        </div>   
-        <div class="weatherWidgetRow cloudDiv">
+          </div>   
+          <div class="weatherWidgetRow cloudDiv">
             <i class="fas fa-cloud fa-3x cloud"></i>
+          </div>
+          <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData[city]?.main.temp - 273.15 | number: '1.0-0'}}°</div>
+          <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData[city]?.main.temp_min - 273.15 | number: '1.0-0'}}°/{{WeatherData[city]?.main.temp_max - 273.15 | number: '1.0-0'}}°</div>
+          <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{WeatherData[city]?.main.feels_like - 273.15 | number: '1.0-0'}}°</div>
+          <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{WeatherData[city]?.name}}</div>
+          <div class="weatherWidgetRow" style="font-size: 12px;">Humidity: {{WeatherData[city]?.main.humidity}}%</div>
         </div>
-        <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.main.temp - 273.15 | number: '1.0-0'}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.main.temp_min - 273.15 | number: '1.0-0'}}°/{{WeatherData.main.temp_max - 273.15 | number: '1.0-0'}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{WeatherData.main.feels_like - 273.15 | number: '1.0-0'}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{WeatherData.name}}</div>
-        <div class="weatherWidgetRow" style="font-size: 12px;">Humidity: {{WeatherData.main.humidity}}%</div>
+      </a>
     </div>
-</a>
+  </div>
+
+
+
+
+  

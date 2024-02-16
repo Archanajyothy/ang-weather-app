@@ -12,6 +12,17 @@ a {
     text-decoration: none;
 }
 
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 150px;
+}
+
+.cards{
+    margin: 25px;
+}
+
 .weatherWidgetRow{
     display:block;
     margin:0 auto;
